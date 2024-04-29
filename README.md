@@ -2,6 +2,8 @@
 
 Welcome to the **My Smart Menu** repository, your intelligent solution for weekly meal planning. With the aid of AI, My Smart Menu customizes your meals based on a selection of dishes, ensuring variety and nutritional balance.
 
+[Try it here.](https://my-smart-menu.vercel.app/)
+
 ## Technologies Used
 
 - **Vite**: A powerful front-end build tool that provides a faster and leaner development experience.

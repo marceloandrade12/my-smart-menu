@@ -1,6 +1,6 @@
 import { Button, CloseButton, Flex, Heading } from "@chakra-ui/react";
 import React from "react";
-import { Input } from "./components";
+import { Input, Navbar } from "./components";
 import { Dish } from "./types";
 
 const dishes: Dish[] = [
@@ -66,59 +66,62 @@ const App: React.FC = () => {
     });
 
   return (
-    <Flex w="100%" justifyContent="space-around" textAlign="center">
-      <Flex flexDirection="column" gap="1rem" flexBasis="40%">
-        <Heading as="h1" size="xl">
-          Pratos Disponíveis
-        </Heading>
-        <Flex
-          alignItems="baseline"
-          gap="1rem"
-          wrap="wrap"
-          justifyContent="center"
-        >
-          {availableDishes.map((dish, index) => {
-            return (
-              <Flex key={`available-dish-${index}`}>
-                <Button onClick={() => handleSelectDish(dish)}>
-                  {dish.name}
-                </Button>
-              </Flex>
-            );
-          })}
-          <Flex>
-            <Input onSave={handleOnSaveNewDish} />
+    <React.Fragment>
+      <Navbar />
+      <Flex w="100%" justifyContent="space-around" textAlign="center">
+        <Flex flexDirection="column" gap="1rem" flexBasis="40%">
+          <Heading as="h1" size="l">
+            Pratos Disponíveis
+          </Heading>
+          <Flex
+            alignItems="baseline"
+            gap="1rem"
+            wrap="wrap"
+            justifyContent="center"
+          >
+            {availableDishes.map((dish, index) => {
+              return (
+                <Flex key={`available-dish-${index}`}>
+                  <Button onClick={() => handleSelectDish(dish)}>
+                    {dish.name}
+                  </Button>
+                </Flex>
+              );
+            })}
+            <Flex>
+              <Input onSave={handleOnSaveNewDish} />
+            </Flex>
+          </Flex>
+        </Flex>
+        <Flex flexDirection="column" gap="2rem" flexBasis="40%">
+          <Heading as="h1" size="l">
+            Pratos Selecionados
+          </Heading>
+          <Flex
+            alignItems="baseline"
+            gap="1rem"
+            wrap="wrap"
+            justifyContent="center"
+          >
+            {selectedDishes.map((dish, index) => {
+              return (
+                <Flex
+                  key={`selected-dish-${index}`}
+                  display="flex"
+                  flexDirection="row"
+                >
+                  {dish.name}{" "}
+                  <CloseButton
+                    size="sm"
+                    onClick={() => handleOnRemoveDish(index)}
+                  />
+                </Flex>
+              );
+            })}
           </Flex>
         </Flex>
       </Flex>
-      <Flex flexDirection="column" gap="2rem" flexBasis="40%">
-        <Heading as="h1" size="xl">
-          Pratos Selecionados
-        </Heading>
-        <Flex
-          alignItems="baseline"
-          gap="1rem"
-          wrap="wrap"
-          justifyContent="center"
-        >
-          {selectedDishes.map((dish, index) => {
-            return (
-              <Flex
-                key={`selected-dish-${index}`}
-                display="flex"
-                flexDirection="row"
-              >
-                {dish.name}{" "}
-                <CloseButton
-                  size="sm"
-                  onClick={() => handleOnRemoveDish(index)}
-                />
-              </Flex>
-            );
-          })}
-        </Flex>
-      </Flex>
-    </Flex>
+    </React.Fragment>
   );
 };
 

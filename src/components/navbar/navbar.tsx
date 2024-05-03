@@ -15,10 +15,13 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 
+import { useNavigate } from "react-router-dom";
 import imgUrl from "../../assets/logo.png";
 
 export const Navbar: React.FC = () => {
   const { colorMode, toggleColorMode } = useColorMode();
+
+  const navigate = useNavigate();
 
   const locales = ["PT", "EN"];
   const [locale, setLocale] = React.useState(locales[0]);
@@ -27,15 +30,15 @@ export const Navbar: React.FC = () => {
   };
   return (
     <>
-      <Box
-        bg={useColorModeValue("gray.100", "gray.900")}
-        px={4}
-        marginBottom="3rem"
-      >
+      <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           {/* <Box>Logo</Box> */}
           <Box w="60px">
-            <img src={imgUrl} alt="My Smart Menu Logo" />
+            <img
+              src={imgUrl}
+              alt="My Smart Menu Logo"
+              onClick={() => navigate("/")}
+            />
           </Box>
 
           <Flex alignItems={"center"}>

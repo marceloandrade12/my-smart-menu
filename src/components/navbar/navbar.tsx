@@ -15,10 +15,10 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 
+import { languages } from "@i18n";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import imgUrl from "../../assets/logo.png";
-import { languages } from "../../i18n";
 
 export const Navbar: React.FC = () => {
   const { colorMode, toggleColorMode } = useColorMode();

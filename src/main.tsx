@@ -4,7 +4,7 @@ import { App } from "./App.tsx";
 import { ChakraProvider } from "@chakra-ui/react";
 import React from "react";
 
-import "./i18n";
+import "@i18n";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

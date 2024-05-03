@@ -1,7 +1,7 @@
+import { Layout } from "@components";
+import { DishSelection, Home, MenuSelection, Result } from "@screens";
 import React from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { Layout } from "./components";
-import { DishSelection, Home, MenuSelection, Result } from "./screens";
 
 export const routes = ["/", "/menuSelection", "/dishSelection", "/result"];
 

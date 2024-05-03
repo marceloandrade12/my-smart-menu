@@ -1,6 +1,7 @@
 import { ArrowBackIcon } from "@chakra-ui/icons";
 import { Button, Flex } from "@chakra-ui/react";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { routes } from "../../App";
 import { Navbar } from "../navbar";
@@ -8,6 +9,8 @@ import { Navbar } from "../navbar";
 export const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
+
+  const { t } = useTranslation();
 
   const currentScreenIndex = routes.findIndex((x) => x === pathname);
 
@@ -44,7 +47,7 @@ export const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
         {currentScreenIndex < routes.length - 1 && (
           <Flex justifyContent="center" marginBottom="2rem">
             <Button size="lg" onClick={next}>
-              Continue
+              {t("continue")}
             </Button>
           </Flex>
         )}

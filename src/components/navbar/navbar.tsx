@@ -15,18 +15,20 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import imgUrl from "../../assets/logo.png";
+import { languages } from "../../i18n";
 
 export const Navbar: React.FC = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   const navigate = useNavigate();
 
-  const locales = ["PT", "EN"];
-  const [locale, setLocale] = React.useState(locales[0]);
+  const { i18n } = useTranslation();
+
   const switchLanguage = (nextLocale: string) => {
-    setLocale(nextLocale);
+    i18n.changeLanguage(nextLocale.toLowerCase());
   };
   return (
     <>
@@ -56,10 +58,10 @@ export const Navbar: React.FC = () => {
                       variant="ghost"
                       isActive={isOpen}
                     >
-                      {locale.toUpperCase()}
+                      {i18n.language.toUpperCase()}
                     </MenuButton>
                     <MenuList>
-                      {locales.map((cur) => (
+                      {languages.map((cur) => (
                         <MenuItem key={cur} onClick={() => switchLanguage(cur)}>
                           {cur.toUpperCase()}
                         </MenuItem>

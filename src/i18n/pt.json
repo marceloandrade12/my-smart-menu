@@ -4,5 +4,12 @@
     "title": "Bem-vindo ao My Smart Menu!",
     "text": "Aqui, a inteligência artificial e a paixão pela boa comida se encontram para criar a sua experiência culinária perfeita. Com uma vasta seleção de refeições deliciosas, o My Smart Menu elabora planos semanais personalizados para os seus almoços, jantares ou lanches.",
     "tryNow": "Experimente agora!"
+  },
+  "menuSelection": {
+    "title": "Que refeições prefere ?",
+    "lunch": "Almoços",
+    "dinner": "Jantares",
+    "lunch&Dinner": "Almoços e Jantares",
+    "snacks": "Lanche"
   }
 }

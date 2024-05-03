@@ -1,4 +1,4 @@
-import { ArrowBackIcon } from "@chakra-ui/icons";
+import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
 import { Button, Flex } from "@chakra-ui/react";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -46,7 +46,11 @@ export const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
         </Flex>
         {currentScreenIndex < routes.length - 1 && (
           <Flex justifyContent="center" marginBottom="2rem">
-            <Button size="lg" onClick={next}>
+            <Button
+              rightIcon={<ArrowForwardIcon />}
+              variant="outline"
+              onClick={next}
+            >
               {t("continue")}
             </Button>
           </Flex>

@@ -32,3 +32,5 @@ export const dishes: Dish[] = [
     name: "Pastéis de Nata",
   },
 ];
+
+export const menuTypes = ["dinner", "lunch&Dinner", "snacks"];

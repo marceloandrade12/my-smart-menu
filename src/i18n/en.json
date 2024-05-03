@@ -4,5 +4,12 @@
     "title": "Welcome to My Smart Menu!",
     "text": "Here, artificial intelligence and a passion for good food come together to create your perfect culinary experience. With a wide selection of delicious meals, My Smart Menu creates personalized weekly plans for your lunches, dinners, or snacks.",
     "tryNow": "Try it now!"
+  },
+  "menuSelection": {
+    "title": "Which meals do you prefer?",
+    "lunch": "Lunches",
+    "dinner": "Dinners",
+    "lunch&Dinner": "Lunches and Dinners",
+    "snacks": "Snacks"
   }
 }
